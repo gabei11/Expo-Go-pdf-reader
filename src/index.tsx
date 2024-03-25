@@ -386,7 +386,7 @@ class PdfReader extends React.Component<Props, State> {
       case 'GOOGLE_READER':
         return { uri: getGoogleReaderUrl(uri!) }
       case 'GOOGLE_DRIVE_VIEWER':
-        return { uri: getGoogleDriveUrl(uri) };
+        return { uri: getGoogleDriveUrl(uri!) }
       case 'DIRECT_BASE64':
       case 'URL_TO_BASE64':
         return { uri: htmlPath }
@@ -475,7 +475,7 @@ class PdfReader extends React.Component<Props, State> {
               onError,
               onHttpError: onError,
               style,
-              source: renderedOnce || !isAndroid ? source : undefined,
+              source: source || { uri: null },
             }}
             allowFileAccess={isAndroid}
             allowFileAccessFromFileURLs={isAndroid}
