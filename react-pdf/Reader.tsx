@@ -10,7 +10,7 @@ import Up from './components/up'
 import './Reader.less'
 
 const ReactContainer = document.querySelector('#react-container')
-const version = '2.1.266'
+const version = '4.0.379'
 const options = {
   cMapUrl: `//cdn.jsdelivr.net/npm/pdfjs-dist@${version}/cmaps/`,
   cMapPacked: true,
