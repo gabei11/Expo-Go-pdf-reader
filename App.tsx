@@ -1,10 +1,10 @@
 import React from 'react'
-import PdfReader from './src/'
+import { View, Text, Modal, Button, SafeAreaView, Switch } from 'react-native'
 import {
   WebViewErrorEvent,
   WebViewHttpErrorEvent,
 } from 'react-native-webview/lib/WebViewTypes'
-import { View, Text, Modal, Button, SafeAreaView, Switch } from 'react-native'
+import PdfReader from './src/'
 
 const base64 =
   'data:application/pdf;base64,JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwog' +
@@ -20,7 +20,7 @@ const base64 =
   'CjAwMDAwMDAwNzkgMDAwMDAgbiAKMDAwMDAwMDE3MyAwMDAwMCBuIAowMDAwMDAwMzAxIDAw' +
   'MDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9v' +
   'dCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G'
-const uri = 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'
+const uri = 'https://unctad.org/system/files/official-document/tir2023_en.pdf'
 
 function App() {
   const [error, setError] = React.useState<
@@ -31,6 +31,7 @@ function App() {
   const [useGoogleReader, setUseGoogleReader] = React.useState<boolean>(false)
   const [withScroll, setWithScroll] = React.useState<boolean>(false)
   const [withPinchZoom, setWithPinchZoom] = React.useState<boolean>(false)
+
   if (error) {
     return (
       <View
